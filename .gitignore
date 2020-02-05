@@ -3,3 +3,4 @@ node_modules/
 *.pdf
 package-lock.json
 dev.js
+download/
