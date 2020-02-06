@@ -14,7 +14,7 @@ npm install
 # 淘宝源
 npm install --registry=https://registry.npm.taobao.org
 ```
-* 合并PDF需要调用hummus库，在node v10.18.1(Centos) 与 node v12.9.1(Windows)下安装成功，在node v13.2.0(Mac)下安装失败，在无法安装的hummus的情况下，推荐使用python合并PDF。  
+* 合并PDF需要调用hummus库，在node v10.18.1(Centos) 与 node v12.9.1(Windows)下安装成功，在node v13.2.0(Mac)下安装失败，在无法安装hummus的情况下，推荐使用python合并PDF。  
 
 运行方式： `node index.js [id] [timeout] [merge]` / `dev.exe [id] [timeout]` 
 * id参数为打开书籍详情，浏览器地址栏`id=`后的数字
