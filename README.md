@@ -3,7 +3,7 @@
 
 [悦读](https://yd.51zhy.cn/)  
 
-windows用户可跳过部署过程，直接下载[编译好的exe](https://www.lanzous.com/i92ywgd)   
+windows用户可跳过部署过程，直接下载[编译好的exe](https://www.lanzous.com/i93bwbg)   
 **项目依赖node环境**  
 部署过程:  
 * 克隆项目 `git clone https://github.com/shylocks/51zhy_pdf.git`
