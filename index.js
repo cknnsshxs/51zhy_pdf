@@ -2,7 +2,7 @@ const axios = require('axios');
 axios.defaults.timeout = 10000;
 const Crypto = require("crypto-js");
 const fs = require('fs');
-const hummus = require('hummus');
+let hummus;
 const memoryStreams = require('memory-streams');
 
 let id = 621967, merge = true, authorKey = undefined;
@@ -12,6 +12,12 @@ if (process.argv.length >= 4)
     axios.defaults.timeout = process.argv[3] * 1000;
 if (process.argv.length >= 5)
     merge = !!+process.argv[4];
+try{
+    hummus = require('hummus');
+}
+catch (e) {
+    merge = false
+}
 let deviceKey = '3uKpxtFAoOeqQQ0S';
 let deviceToken = 'ebookF32BE444AF96C3BB0E71BF02D648DD9C';
 
@@ -119,8 +125,8 @@ axios.get('https://bridge.51zhy.cn/transfer/Content/Detail', {params: detail_par
         } else {
             authorKey = makeKey(deviceKey, data['Key']);
             let buffer_list = [];
-            if (!merge && !fs.existsSync(id)) {
-                fs.mkdirSync(id);
+            if (!merge && !fs.existsSync(String(id))) {
+                fs.mkdirSync(String(id));
             }
             let page = data['SplitFileUrls'];
             while (page.length) {
